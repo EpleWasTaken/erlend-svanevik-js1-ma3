@@ -20,3 +20,15 @@ h1 {
   margin: 0;
   padding: 10px;
 }
+
+.error {
+  border: 1px solid red;
+  padding: 1rem;
+  color: red;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.visitMessage {
+  padding: 10px;
+  font-size: 20px;
+}

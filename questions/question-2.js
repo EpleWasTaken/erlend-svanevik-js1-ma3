@@ -5,6 +5,8 @@ const url =
 
 const gamesContainer = document.querySelector(".results");
 
+const visitMessage = document.querySelector(".visitMessage");
+
 async function getGames() {
   try {
     const response = await fetch(url);
@@ -22,7 +24,7 @@ async function getGames() {
 
       gamesContainer.innerHTML += `<div class="gameName">Game name: ${results[i].name}</div>`;
       gamesContainer.innerHTML += `<div class="gameRating">Game rating: ${results[i].rating}</div>`;
-      gamesContainer.innerHTML += `<div class="gameAmountTags">Amount of tags: ${results[i].tags.length}</div>`;
+      gamesContainer.innerHTML += `<div class="gameAmountTags">Amount of tags on this game: ${results[i].tags.length}</div>`;
 
       if (i === 7) {
         break;
@@ -40,6 +42,9 @@ async function getGames() {
     }
   } finally {
     console.log("Thanks for visiting GameRatings.com");
+    visitMessage.innerHTML = displayMessage(
+      "Thanks for visiting GameRatings.com"
+    );
   }
 }
 
